@@ -492,18 +492,18 @@ header {
   line-height: 1.14;
 }
 
-.footer-item .social-link {
+.footer-section .social-link {
   background-color: rgba(255, 255, 255, 0.1);
 
   transition: background-color var(--animation);
 }
 
-.footer-item .social-icon {
+.footer-section .social-icon {
   fill: var(--dark-bg-text-color);
 }
 
-.footer-item .social-link:hover,
-.footer-item .social-link:focus {
+.footer-section .social-link:hover,
+.footer-section .social-link:focus {
   background-color: var(--accent-color);
 }
 
@@ -755,15 +755,15 @@ header {
 
 .form-input {
   padding-top: 12px;
-  padding-right: 12px;
+  padding-right: 16px;
   padding-bottom: 12px;
   padding-left: 42px;
 
   width: 100%;
 
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.14;
+  font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.01em;
 
   color: var(--main-text-color);
@@ -815,9 +815,12 @@ header {
 }
 
 .textarea-input {
-  padding: 12px 16px;
+  padding-left: 16px;
   resize: none;
   width: 100%;
+
+  font-size: 14px;
+  line-height: 1.14;
 }
 
 .textarea-input::placeholder {
@@ -844,12 +847,25 @@ header {
 }
 
 .checkbox-label {
+  position: relative;
   align-items: center;
 
   font-size: 14px;
 }
 
-.checkbox-label::before {
+.checkbox-icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+
+  transform: translateY(-50%);
+
+  border-radius: 2px;
+
+  transition: background-color var(--animation);
+}
+
+.checkbox-text::before {
   content: '';
   display: inline-flex;
   margin-right: 7px;
@@ -866,24 +882,8 @@ header {
   color: var(--accent-color);
 }
 
-.checkbox-input-thumb {
-  position: relative;
-}
-
-.checkbox-icon {
-  position: absolute;
-  top: 50%;
-  left: 0;
-
-  transform: translateY(-50%);
-
-  border-radius: 2px;
-
-  transition: background-color var(--animation);
-}
-
-.checkbox-input:focus ~ .checkbox-label::before,
-.checkbox-input:checked ~ .checkbox-label::before {
+.checkbox-input:focus ~ .checkbox-text::before,
+.checkbox-input:checked ~ .checkbox-text::before {
   border-color: var(--accent-color);
 }
 
